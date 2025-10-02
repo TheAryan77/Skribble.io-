@@ -19,7 +19,7 @@ function App() {
         <div className="landing-container">
           <div className="landing-card">
           <div style={{ marginBottom: '2rem' }}>
-            <h1 className="landing-title">🎨 Skribble</h1>
+            <h1 className="landing-title">🎨 DoodleDash</h1>
             <p className="landing-subtitle">Draw, guess, and have fun with friends!</p>
             <div style={{ 
               display: 'flex', 
