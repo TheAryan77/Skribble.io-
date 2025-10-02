@@ -10,15 +10,25 @@ const roundsHandler = require("./sockets/rounds");
 
 const app = express();
 const server = http.createServer(app);
+const FRONTEND_URL = "https://skribble-io-zeta.vercel.app"; // <-- no trailing slash
+
+// Express CORS
+app.use(cors({
+  origin: FRONTEND_URL,
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+app.use(express.json());
+
+// Socket.IO CORS
 const io = new Server(server, {
   cors: {
-    origin: "https://skribble-io-zeta.vercel.app", // Vite dev server default port
-    methods: ["GET", "POST"]
-  }
+    origin: FRONTEND_URL,
+    methods: ["GET", "POST"],
+    credentials: true
+  },
+  transports: ["websocket", "polling"]
 });
- 
-app.use(cors());
-app.use(express.json());
 
 // Socket connection handling
 io.on("connection", (socket) => {
