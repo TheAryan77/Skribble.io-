@@ -10,7 +10,7 @@ const roundsHandler = require("./sockets/rounds");
 
 const app = express();
 const server = http.createServer(app);
-const FRONTEND_URL = "https://skribble-io-zeta.vercel.app"; // <-- no trailing slash
+const FRONTEND_URL = "https://aryans-doodledash-io-zeta.vercel.app"; // <-- no trailing slash
 
 // Express CORS
 app.use(cors({
